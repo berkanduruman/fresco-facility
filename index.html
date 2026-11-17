@@ -112,6 +112,17 @@ section{padding:88px 0}
 .ptable caption{text-align:left;font-weight:700;padding:0 0 10px}
 .ptable td{padding:11px 16px;border-top:1px solid var(--line);font-size:.95rem}
 .ptable td:last-child{text-align:right;font-weight:600;white-space:nowrap}
+.dd{position:relative}
+.ddbtn{background:none;border:0;font:inherit;font-weight:500;color:var(--ink);cursor:pointer;padding:0}
+.ddbtn:hover{color:var(--fresh)}
+.ddmenu{display:none;position:absolute;top:calc(100% + 14px);left:-16px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(20,32,46,.14);padding:8px;min-width:270px;z-index:40;max-height:75vh;overflow:auto}
+.ddmenu::before{content:"";position:absolute;top:-16px;left:0;right:0;height:16px}
+.dd.open .ddmenu{display:block}
+@media(hover:hover){.dd:hover .ddmenu{display:block}}
+.ddmenu a{display:block;padding:9px 12px;border-radius:8px;color:var(--ink);text-decoration:none;font-weight:500}
+.ddmenu a:hover{background:#E5F2EB;color:var(--fresh-d)}
+.card,section{scroll-margin-top:84px}
+.card:target{border-color:var(--fresh);box-shadow:0 0 0 3px #9FD3B8}
 /* contact */
 .contact{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
 @media(max-width:900px){.contact{grid-template-columns:1fr}}
@@ -146,8 +157,7 @@ summary{cursor:pointer;color:#fff;font-weight:600}
       <span>FRESCO FACILITY<small>GARMISCH-PARTENKIRCHEN</small></span>
     </a>
     <nav aria-label="Hauptnavigation"><ul>
-      <li><a href="#leistungen">Leistungen</a></li>
-      <li><a href="#ferienhaus">Ferienhaus-Service</a></li>
+      <li class="dd"><button class="ddbtn" type="button" aria-expanded="false" aria-haspopup="true">Leistungen <span aria-hidden="true">▾</span></button><div class="ddmenu"><a href="#leistungen"><strong>Alle Leistungen</strong></a><a href="#s-ferienhaus">Ferienhaus &amp; Airbnb</a><a href="#s-hausmeister">Hausmeister &amp; Reparaturen</a><a href="#s-entkernung">Entkernung &amp; Rückbau</a><a href="#s-trockenbau">Trockenbau</a><a href="#s-maler">Maler &amp; Putz</a><a href="#s-boeden">Böden</a><a href="#s-fenster">Fenster &amp; Küchen</a><a href="#s-garten">Garten &amp; Außenanlagen</a><a href="#s-winter">Winterdienst</a><a href="#s-design">Innendesign</a><a href="#s-solar">Solar &amp; E-Ladestationen</a><a href="#ferienhaus">Ferienhaus-Paket</a></div></li>
       <li><a href="#ablauf">Ablauf</a></li>
       <li><a href="#preise">Preise</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
@@ -183,17 +193,17 @@ summary{cursor:pointer;color:#fff;font-weight:600}
     <h2>Vom kleinen Handgriff bis zur Komplettsanierung</h2>
     <p class="intro">Wir übernehmen Ihre Immobilie schlüsselfertig: Betreuung, Reparaturen, Umbau und Pflege. Für Privatkunden, Vermieter, Hotels und Gewerbe.</p>
     <div class="grid">
-      <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div><h3>Ferienhaus &amp; Airbnb</h3><ul><li>Reinigung zwischen den Gästen</li><li>Bettwäsche, Bäder, Geschirr</li><li>Inventar-Kontrolle nach Liste</li><li>Schlüsselservice &amp; Objektkontrolle</li></ul></div>
-      <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><h3>Hausmeister &amp; Reparaturen</h3><ul><li>Kleine und große Reparaturen</li><li>Regelmäßige Kontrollgänge</li><li>Koordination aller Handwerker</li></ul></div>
-      <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13"/><path d="M8 21v-6h8v6"/><path d="M3 21h18"/></svg></div><h3>Entkernung &amp; Rückbau</h3><ul><li>Komplette Entkernung innen</li><li>Rückbau alter Einbauten</li><li>Entsorgung &amp; besenreine Übergabe</li></ul></div>
-      <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 9v12M15 3v6"/></svg></div><h3>Trockenbau</h3><ul><li>Wände, Decken, Vorsatzschalen</li><li>Spachtelarbeiten Q2, Q3, Q4</li><li>Gipsputz &amp; Gipsarbeiten</li></ul></div>
-      <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="14" height="6" rx="1"/><path d="M18 6h2v5h-8v3"/><rect x="10" y="14" width="4" height="7" rx="1"/></svg></div><h3>Maler &amp; Putz</h3><ul><li>Innen- und Fassadenanstrich</li><li>Putzarbeiten</li><li>Treppenhäuser</li></ul></div>
-      <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M5 20V10l7-4 7 4v10"/><path d="M5 14h14"/></svg></div><h3>Böden</h3><ul><li>Neue Betonböden</li><li>Alte Böden schleifen &amp; versiegeln</li><li>Bodenbeläge verlegen</li></ul></div>
-      <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></svg></div><h3>Fenster &amp; Küchen</h3><ul><li>Fenstermontage &amp; Austausch</li><li>Küchenmontage</li><li>Innenausbau nach Maß</li></ul></div>
-      <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12C12 7 8 4 4 4c0 5 3 8 8 8z"/><path d="M12 14c0-4 3-7 8-7 0 4-3 7-8 7z"/></svg></div><h3>Garten &amp; Außenanlagen</h3><ul><li>Gartenpflege &amp; Rasen</li><li>Laub entfernen</li><li>Hecken- &amp; Grünschnitt</li></ul></div>
-      <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9"/></svg></div><h3>Winterdienst</h3><ul><li>Schneeräumung</li><li>Streuen mit Salz oder Splitt</li><li>Zuverlässig auch am Wochenende</li></ul></div>
-      <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div><h3>Innendesign</h3><ul><li>Raumkonzepte</li><li>Material- &amp; Farbberatung</li><li>Umsetzung aus einer Hand</li></ul></div>
-      <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Solar &amp; E-Ladestationen</h3><ul><li>Photovoltaik für Dächer</li><li>Wallboxen &amp; Ladesäulen</li><li>Elektroanschluss durch zertifizierte Partner-Elektrofachbetriebe</li></ul></div>
+      <div class="card" id="s-ferienhaus"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div><h3>Ferienhaus &amp; Airbnb</h3><ul><li>Reinigung zwischen den Gästen</li><li>Bettwäsche, Bäder, Geschirr</li><li>Inventar-Kontrolle nach Liste</li><li>Schlüsselservice &amp; Objektkontrolle</li></ul></div>
+      <div class="card" id="s-hausmeister"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><h3>Hausmeister &amp; Reparaturen</h3><ul><li>Kleine und große Reparaturen</li><li>Regelmäßige Kontrollgänge</li><li>Koordination aller Handwerker</li></ul></div>
+      <div class="card" id="s-entkernung"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13"/><path d="M8 21v-6h8v6"/><path d="M3 21h18"/></svg></div><h3>Entkernung &amp; Rückbau</h3><ul><li>Komplette Entkernung innen</li><li>Rückbau alter Einbauten</li><li>Entsorgung &amp; besenreine Übergabe</li></ul></div>
+      <div class="card" id="s-trockenbau"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 9v12M15 3v6"/></svg></div><h3>Trockenbau</h3><ul><li>Wände, Decken, Vorsatzschalen</li><li>Spachtelarbeiten Q2, Q3, Q4</li><li>Gipsputz &amp; Gipsarbeiten</li></ul></div>
+      <div class="card" id="s-maler"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="14" height="6" rx="1"/><path d="M18 6h2v5h-8v3"/><rect x="10" y="14" width="4" height="7" rx="1"/></svg></div><h3>Maler &amp; Putz</h3><ul><li>Innen- und Fassadenanstrich</li><li>Putzarbeiten</li><li>Treppenhäuser</li></ul></div>
+      <div class="card" id="s-boeden"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M5 20V10l7-4 7 4v10"/><path d="M5 14h14"/></svg></div><h3>Böden</h3><ul><li>Neue Betonböden</li><li>Alte Böden schleifen &amp; versiegeln</li><li>Bodenbeläge verlegen</li></ul></div>
+      <div class="card" id="s-fenster"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></svg></div><h3>Fenster &amp; Küchen</h3><ul><li>Fenstermontage &amp; Austausch</li><li>Küchenmontage</li><li>Innenausbau nach Maß</li></ul></div>
+      <div class="card" id="s-garten"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12C12 7 8 4 4 4c0 5 3 8 8 8z"/><path d="M12 14c0-4 3-7 8-7 0 4-3 7-8 7z"/></svg></div><h3>Garten &amp; Außenanlagen</h3><ul><li>Gartenpflege &amp; Rasen</li><li>Laub entfernen</li><li>Hecken- &amp; Grünschnitt</li></ul></div>
+      <div class="card" id="s-winter"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9"/></svg></div><h3>Winterdienst</h3><ul><li>Schneeräumung</li><li>Streuen mit Salz oder Splitt</li><li>Zuverlässig auch am Wochenende</li></ul></div>
+      <div class="card" id="s-design"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div><h3>Innendesign</h3><ul><li>Raumkonzepte</li><li>Material- &amp; Farbberatung</li><li>Umsetzung aus einer Hand</li></ul></div>
+      <div class="card" id="s-solar"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Solar &amp; E-Ladestationen</h3><ul><li>Photovoltaik für Dächer</li><li>Wallboxen &amp; Ladesäulen</li><li>Elektroanschluss durch zertifizierte Partner-Elektrofachbetriebe</li></ul></div>
     </div>
   </div>
 </section>
@@ -383,5 +393,11 @@ summary{cursor:pointer;color:#fff;font-weight:600}
 </footer>
 
 <a class="wa" href="https://wa.me/491604267811" aria-label="WhatsApp schreiben"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg></a>
+<script>
+(function(){var d=document.querySelector('.dd');if(!d)return;var b=d.querySelector('.ddbtn');
+b.addEventListener('click',function(e){e.stopPropagation();var o=d.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+d.querySelectorAll('.ddmenu a').forEach(function(a){a.addEventListener('click',function(){d.classList.remove('open');b.setAttribute('aria-expanded','false')})});
+document.addEventListener('click',function(){d.classList.remove('open');b.setAttribute('aria-expanded','false')});})();
+</script>
 </body>
 </html>
