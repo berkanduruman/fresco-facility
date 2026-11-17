@@ -92,6 +92,26 @@ section{padding:88px 0}
 .inv li{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:.95rem}
 .ok{color:var(--fresh);font-weight:600}.miss{color:#B4532A;font-weight:600}
 .note{font-size:.8rem;color:#5A6878;margin-top:18px}
+.sub{margin:36px 0 18px;font-size:1.3rem}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:1000px){.pgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pgrid{grid-template-columns:1fr}}
+.pcard{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column}
+.pcard.hl{border:2px solid var(--fresh)}
+.pcard .badge{position:absolute;top:-12px;left:22px;background:var(--sun);color:var(--ink);font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:99px}
+.pp{font-size:1.9rem;font-weight:800;margin:4px 0 14px}.pp small{font-size:.9rem;font-weight:500;color:var(--ink2);margin-left:4px}
+.pcard ul{padding-left:18px;color:var(--ink2);font-size:.93rem;margin:0 0 20px;flex:1}
+.pcard .btn{justify-content:center}
+.terms{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+@media(max-width:860px){.terms{grid-template-columns:repeat(3,1fr)}}
+.terms div{background:var(--bg);border-radius:12px;padding:14px;text-align:center}
+.terms strong{display:block}.terms span{color:var(--fresh);font-weight:700}
+.ptables{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:860px){.ptables{grid-template-columns:1fr}}
+.ptable{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.ptable caption{text-align:left;font-weight:700;padding:0 0 10px}
+.ptable td{padding:11px 16px;border-top:1px solid var(--line);font-size:.95rem}
+.ptable td:last-child{text-align:right;font-weight:600;white-space:nowrap}
 /* contact */
 .contact{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
 @media(max-width:900px){.contact{grid-template-columns:1fr}}
@@ -129,6 +149,7 @@ summary{cursor:pointer;color:#fff;font-weight:600}
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#ferienhaus">Ferienhaus-Service</a></li>
       <li><a href="#ablauf">Ablauf</a></li>
+      <li><a href="#preise">Preise</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul></nav>
     <a class="btn btn-main" href="#kontakt">Anfrage</a>
@@ -254,6 +275,38 @@ summary{cursor:pointer;color:#fff;font-weight:600}
         </ul></div></div>
     </div>
     <p class="note">Beispielbilder.</p>
+  </div>
+</section>
+
+<!-- PREISE -->
+<section id="preise">
+  <div class="wrap">
+    <span class="kicker">Preise</span>
+    <h2>Transparente Preise</h2>
+    <p class="intro">Unsere Standardpreise auf einen Blick. Jedes Objekt ist anders: Wenn etwas nicht passt, sprechen Sie uns an, wir finden gemeinsam eine Lösung.</p>
+    <h3 class="sub">Monatspakete</h3>
+    <div class="pgrid">
+      <div class="pcard hl"><span class="badge">Beliebt</span><h3>Ferienwohnung</h3><div class="pp">ab 179 €<small>/ Monat</small></div><ul><li>Wöchentlicher Kontrollgang</li><li>Schlüsselservice für Gäste</li><li>Inventar-Check nach Liste</li><li>Foto- &amp; Videobericht aufs Handy</li><li>Endreinigung pro Gästewechsel extra</li></ul><a class="btn btn-main" href="#kontakt">Anfragen</a></div>
+      <div class="pcard"><h3>Hausmeister</h3><div class="pp">ab 129 €<small>/ Monat</small></div><ul><li>2 Kontrollgänge im Monat</li><li>Kleinreparaturen bis 1 Std. inklusive</li><li>Koordination von Handwerkern</li><li>Fester Ansprechpartner</li></ul><a class="btn btn-dark" href="#kontakt">Anfragen</a></div>
+      <div class="pcard"><h3>Garten-Abo</h3><div class="pp">ab 149 €<small>/ Monat</small></div><ul><li>April bis Oktober</li><li>2 Pflegeeinsätze im Monat</li><li>Rasen, Beete, Hecke</li><li>Grünschnitt-Entsorgung inklusive</li></ul><a class="btn btn-dark" href="#kontakt">Anfragen</a></div>
+      <div class="pcard"><h3>Winterdienst</h3><div class="pp">ab 149 €<small>/ Monat</small></div><ul><li>November bis März</li><li>Räumen &amp; Streuen nach Bedarf</li><li>Auch am Wochenende</li><li>Saisonpauschale: ab 699 €</li></ul><a class="btn btn-dark" href="#kontakt">Anfragen</a></div>
+    </div>
+    <h3 class="sub">Je länger, desto günstiger</h3>
+    <div class="terms">
+      <div><strong>Monatlich</strong><span>flexibel kündbar</span></div>
+      <div><strong>3 Monate</strong><span>−5 %</span></div>
+      <div><strong>6 Monate</strong><span>−8 %</span></div>
+      <div><strong>12 Monate</strong><span>−12 %</span></div>
+      <div><strong>24 Monate</strong><span>−15 %</span></div>
+      <div><strong>5 Jahre</strong><span>−20 %</span></div>
+    </div>
+    <h3 class="sub">Einzelleistungen</h3>
+    <div class="ptables">
+      <table class="ptable"><caption>Service &amp; Pflege</caption><tr><td>Hausmeister / Arbeitsstunde</td><td>54 € / Std.</td></tr><tr><td>Gartenpflege</td><td>54 € / Std.</td></tr><tr><td>Rasenmähen</td><td>ab 0,25 € / m²</td></tr><tr><td>Heckenschnitt</td><td>ab 7 € / lfm</td></tr><tr><td>Winterdienst Einzeleinsatz</td><td>ab 69 €</td></tr><tr><td>Endreinigung Ferienwohnung</td><td>ab 99 €</td></tr><tr><td>Wäschepaket pro Person</td><td>18 €</td></tr><tr><td>Inventar-Check mit Fotobericht</td><td>19 €</td></tr></table>
+      <table class="ptable"><caption>Ausbau &amp; Renovierung</caption><tr><td>Trockenbauwand einfach beplankt</td><td>ab 65 € / m²</td></tr><tr><td>Trockenbauwand doppelt beplankt</td><td>ab 95 € / m²</td></tr><tr><td>Brandschutzwand F90</td><td>ab 145 € / m²</td></tr><tr><td>Spachteln Q3 / Q4 Aufpreis</td><td>+10 € / +18 € / m²</td></tr><tr><td>Wände streichen</td><td>ab 14 € / m²</td></tr><tr><td>Decken streichen</td><td>ab 18 € / m²</td></tr><tr><td>Entkernung &amp; Rückbau</td><td>nach Besichtigung</td></tr><tr><td>Böden, Fenster, Küchenmontage</td><td>nach Besichtigung</td></tr></table>
+    </div>
+    <p class="note">Alle Preise inkl. 19 % MwSt. Anfahrt innerhalb Garmisch-Partenkirchen inklusive. Der verbindliche Preis steht im schriftlichen Angebot nach Besichtigung. Material wird nach Aufwand berechnet.</p>
+    <div class="cta" style="margin-top:20px"><a class="btn btn-main" href="#kontakt">Angebot anfragen</a></div>
   </div>
 </section>
 
