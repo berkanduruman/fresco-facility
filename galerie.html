@@ -45,14 +45,50 @@ dialog::backdrop{background:rgba(47,62,70,.45)}
 .cta{background:var(--fresh);color:#fff;padding:44px 0;text-align:center}.cta h2{color:#fff}.cta .btn{background:#fff;color:var(--fresh-d);border-color:#fff;margin:6px}
 footer{background:#2F3E46;color:#fff;padding:22px 0;font-size:13px}footer a{color:#fff}
 @media(max-width:760px){.paths{grid-template-columns:1fr}.back span{display:none}}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:1.3rem;letter-spacing:.04em}
+.logo small{display:block;font-weight:500;font-size:.68rem;letter-spacing:.18em;color:var(--ink2)}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--ink);text-decoration:none;font-weight:500}
+.nav ul a:hover{color:var(--fresh)}
+@media(max-width:860px){.nav ul{display:none}}
+.logo span{white-space:nowrap}
+@media(max-width:560px){.nav{height:64px}.logo{font-size:1rem;gap:8px}.logo svg{width:32px;height:32px}.logo small{font-size:.52rem;letter-spacing:.12em}.nav .btn{padding:8px 14px;min-height:40px;font-size:.9rem}}
+.dd{position:relative}
+.ddbtn{background:none;border:0;font:inherit;font-weight:500;color:var(--ink);cursor:pointer;padding:0}
+.ddbtn:hover{color:var(--fresh)}
+.ddmenu{display:none;position:absolute;top:calc(100% + 14px);left:-16px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(20,32,46,.14);padding:8px;min-width:270px;z-index:40;max-height:75vh;overflow:auto}
+.ddmenu::before{content:"";position:absolute;top:-16px;left:0;right:0;height:16px}
+.dd.open .ddmenu{display:block}
+.ddmenu a{display:block;padding:9px 12px;border-radius:8px;color:var(--ink);text-decoration:none;font-weight:500}
+.ddmenu a:hover{background:#E5F2EB;color:var(--fresh-d)}
+.mbtn{display:none;background:none;border:0;color:var(--ink);cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center;order:3}
+@media(max-width:860px){.mbtn{display:flex}.nav{position:relative}.nav ul.open{display:flex;position:absolute;top:72px;left:-24px;right:-24px;flex-direction:column;gap:14px;background:#fff;padding:18px 28px 24px;border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(20,32,46,.1);max-height:80vh;overflow:auto}.nav ul.open .ddbtn{display:none}.nav ul.open .ddmenu{display:block;position:static;box-shadow:none;border:0;padding:0;min-width:0;max-height:none}.nav ul.open .ddmenu a{padding:8px 0}}
+.langs{display:flex;gap:10px;font-size:.85rem;font-weight:600}
+.langs a{color:var(--ink2);text-decoration:none}.langs a:hover{color:var(--fresh)}
+header .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid transparent;min-height:48px;cursor:pointer;font-size:1rem;background:var(--fresh);color:#fff}header .btn:hover{background:var(--fresh-d)}header .wrap{max-width:1180px;padding:0 24px}:root{--ink2:#3E4C5C}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute"><defs><pattern id="pg" width="9" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#B8AF9E"/><circle cx="6.5" cy="5" r="1" fill="#B8AF9E"/></pattern><pattern id="pw" width="6" height="5" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1.1" fill="#F5EDE3"/><circle cx="4.5" cy="3.8" r="0.9" fill="#F5EDE3"/></pattern></defs></svg>
-<header><div class="wrap nav">
-<a class="logo" href="/"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="66" r="15" fill="#F2A541"/><path d="M18 62 L60 24 L102 62" stroke="#2F3E46" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 88 Q60 106 90 88" stroke="#1E6B48" stroke-width="11" fill="none" stroke-linecap="round"/></svg><span>FRESCO FACILITY<small>GARMISCH-PARTENKIRCHEN</small></span></a>
-<div style="display:flex;gap:14px;align-items:center"><a class="back" href="/">← <span>Startseite</span></a><a class="btn" href="/#kontakt">Anfrage</a></div>
-</div></header>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/" aria-label="Fresco Facility – Startseite">
+      <svg width="42" height="42" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="66" r="15" fill="#F2A541"/><path d="M18 62 L60 24 L102 62" stroke="#2F3E46" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 88 Q60 106 90 88" stroke="#1E6B48" stroke-width="10" fill="none" stroke-linecap="round"/></svg>
+      <span>FRESCO FACILITY<small>GARMISCH-PARTENKIRCHEN</small></span>
+    </a>
+    <button class="mbtn" type="button" aria-label="Menü öffnen" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav aria-label="Hauptnavigation"><ul>
+      <li class="dd"><button class="ddbtn" type="button" aria-expanded="false" aria-haspopup="true">Leistungen <span aria-hidden="true">▾</span></button><div class="ddmenu"><a href="/#probleme"><strong>Gebäudemanagement</strong></a><a href="/#leistungen"><strong>Alle Leistungen</strong></a><a href="/#s-ferienhaus">Ferienwohnung-Service</a><a href="/#s-hausmeister">Objektbetreuung &amp; Hausmeister</a><a href="/#s-technik">Möbelmontage &amp; Haustechnik</a><a href="/#s-reinigung">Gebäudereinigung</a><a href="/#s-gastro">Gastro-Reinigung</a><a href="/#s-trockenbau">Trockenbau</a><a href="/#s-renovierung">Malerarbeiten &amp; Renovierung</a><a href="/#s-stuck">Stuck, Marmortechnik &amp; Innendesign</a><a href="/#s-schilder">Schaufensterbeschriftung &amp; Schilder</a><a href="/#s-boeden">Böden, Fenster &amp; Küchen</a><a href="/#s-entkernung">Rückbau &amp; Entkernung</a><a href="/#s-planung">Projektplanung</a><a href="/#s-garten">Garten &amp; Außenanlagen</a><a href="/#s-winter">Winterdienst</a><a href="/#s-pflaster">Einfahrten, Pflaster &amp; Zaunbau</a><a href="/#s-kamera">Kamera- &amp; Sicherheitstechnik</a><a href="/#s-pergola">Pergola &amp; Terrassenüberdachung</a><a href="/#s-solar">Carport, Solar &amp; Wallbox</a></div></li>
+      <li><a href="/galerie.html">Galerie</a></li><li><a href="/#ablauf">Ablauf</a></li>
+      <li><a href="/#preise">Preise</a></li>
+      <li><a href="/#kontakt">Kontakt</a></li>
+      <li class="langs"><a href="/" lang="de">DE</a><a href="https://facility-frescoitaliana-com.translate.goog/?_x_tr_sl=de&amp;_x_tr_tl=en&amp;_x_tr_hl=en" lang="en">EN</a><a href="https://facility-frescoitaliana-com.translate.goog/?_x_tr_sl=de&amp;_x_tr_tl=ar&amp;_x_tr_hl=ar" lang="ar">AR</a><a href="https://facility-frescoitaliana-com.translate.goog/?_x_tr_sl=de&amp;_x_tr_tl=ru&amp;_x_tr_hl=ru" lang="ru">RU</a></li>
+    </ul></nav>
+    <a class="btn btn-main" href="/#kontakt">Anfrage</a>
+  </div>
+</header>
 <section class="ghero"><div class="wrap">
 <h1>Ideen-Galerie</h1>
 <p class="lead">Stile und Ideen für Carports, Einfahrten und Gärten. Tippen Sie auf eine Idee – wir erklären, was dazugehört. Gern erstellen wir eine Visualisierung für Ihr Grundstück.</p>
@@ -62,7 +98,7 @@ footer{background:#2F3E46;color:#fff;padding:22px 0;font-size:13px}footer a{colo
 <section class="cta"><div class="wrap"><h2>Ihre Idee ist nicht dabei?</h2><p>Wir bauen, was Sie sich vorstellen – erzählen Sie uns davon.</p>
 <a class="btn" href="tel:+491604267811">Jetzt anrufen</a><a class="btn" href="https://wa.me/491604267811">WhatsApp</a><a class="btn" href="/#kontakt">Anfrage senden</a>
 <p class="note" style="color:#fff">Illustrationen dienen der Inspiration und zeigen Stilrichtungen, keine Referenzobjekte.</p></div></section>
-<footer><div class="wrap">© Fresco GmbH · Garmisch-Partenkirchen · <a href="/#kontakt">Impressum &amp; Datenschutz</a></div></footer>
+<footer><div class="wrap">© Fresco GmbH · Garmisch-Partenkirchen · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></div></footer>
 <dialog id="dlg"><button class="dclose" type="button" aria-label="Schließen">×</button><div class="dpic"></div><div class="dbody"><h3></h3><p class="dd0"></p><dl><dt>Materialien</dt><dd class="dm"></dd><dt>Ideal für</dt><dd class="dw"></dd></dl>
 <div class="dact"><a class="btn" href="/#kontakt">Angebot anfragen</a><a class="btn o" href="https://wa.me/491604267811">WhatsApp</a></div></div></dialog>
 <script>
@@ -71,5 +107,12 @@ document.querySelectorAll('.gc').forEach(b=>b.addEventListener('click',()=>{cons
 d.querySelector('.dpic').innerHTML=b.querySelector('.gp').innerHTML;d.querySelector('h3').textContent=i.t;d.querySelector('.dd0').textContent=i.d;d.querySelector('.dm').textContent=i.m;d.querySelector('.dw').textContent=i.w;
 const w=d.querySelector('.dact .o');w.href='https://wa.me/491604267811?text='+encodeURIComponent('Hallo, ich interessiere mich für: '+i.t);d.showModal();}));
 d.querySelector('.dclose').onclick=()=>d.close();d.addEventListener('click',e=>{if(e.target===d)d.close();});
+</script>
+<script>
+(function(){var mb=document.querySelector(".mbtn"),ul=document.querySelector(".nav ul");if(mb&&ul){mb.addEventListener("click",function(e){e.stopPropagation();var o=ul.classList.toggle("open");mb.setAttribute("aria-expanded",o)});ul.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){ul.classList.remove("open");mb.setAttribute("aria-expanded","false")})});}})();
+(function(){var d=document.querySelector('.dd');if(!d)return;var b=d.querySelector('.ddbtn');
+b.addEventListener('click',function(e){e.stopPropagation();var o=d.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+d.querySelectorAll('.ddmenu a').forEach(function(a){a.addEventListener('click',function(){d.classList.remove('open');b.setAttribute('aria-expanded','false')})});
+document.addEventListener('click',function(){d.classList.remove('open');b.setAttribute('aria-expanded','false')});})();
 </script>
 </body></html>
